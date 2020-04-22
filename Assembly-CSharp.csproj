@@ -611,11 +611,12 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3Int.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
     <Compile Include="Assets\Script\Bullet\Bullet.cs" />
-    <Compile Include="Assets\Script\Item\Equapiment.cs" />
+    <Compile Include="Assets\Script\Item\Equipment.cs" />
     <Compile Include="Assets\Script\Item\EquipmentTypes.cs" />
     <Compile Include="Assets\Script\Item\Item.cs" />
     <Compile Include="Assets\Script\Item\ItemIds.cs" />
     <Compile Include="Assets\Script\Item\ItemTypes.cs" />
+    <Compile Include="Assets\Script\Item\MachineGun.cs" />
     <Compile Include="Assets\Script\Item\Weapon.cs" />
     <Compile Include="Assets\Script\Item\Weapons.cs" />
     <Compile Include="Assets\Script\MenuUI\MainMenu.cs" />

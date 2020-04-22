@@ -6,7 +6,6 @@ public class Shooting : MonoBehaviour
 {
 
     public Transform firePoint;
-    public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
 
@@ -15,16 +14,17 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.GameIsPaused && Input.GetButtonDown("Fire1"))
+        if (PauseMenu.GameIsPaused)
+            return;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.resetTime();
+        }
+        else if (Input.GetButton("Fire1"))
         {
             weapon.Fire(firePoint);
         }
     }
 
-    void Shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-    }
 }
