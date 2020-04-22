@@ -10,12 +10,14 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 20f;
 
+    public Weapon weapon;
+
     // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.GameIsPaused && Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            weapon.Fire(firePoint);
         }
     }
 
