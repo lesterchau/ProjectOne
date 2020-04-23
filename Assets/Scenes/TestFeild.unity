@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 54723517}
   bulletForce: 20
-  weapon: {fileID: 11400000, guid: 21164319f0f7e3c44b1fbe4eb57cd47e, type: 2}
+  weapon: {fileID: 11400000, guid: d44b928a36800e348b78a882f872e7ee, type: 2}
 --- !u!114 &757174888
 MonoBehaviour:
   m_ObjectHideFlags: 0
