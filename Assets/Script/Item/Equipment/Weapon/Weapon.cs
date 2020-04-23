@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Weapon : Equipment
 {
+    public WeaponsType weaponsType;
 
     public float FireRate;
     public float SpreadAngle;
@@ -11,16 +12,17 @@ public abstract class Weapon : Equipment
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
 
-    private float nextTimeFire;
+    protected float nextTimeFire;
 
     private void OnEnable()
     {
-        resetTime();
+        nextTimeFire = Time.time;
     }
 
     public void resetTime()
     {
-        nextTimeFire = Time.time;
+        if (Time.time > nextTimeFire)
+            nextTimeFire = Time.time;
     }
 
     protected new void OnValidate()
@@ -29,14 +31,19 @@ public abstract class Weapon : Equipment
         EquapimentType = EquipmentTypes.Weapons;
     }
 
-    public virtual void Fire(Transform firePoint)
+    public virtual void Fire(Vector2 position, Quaternion rotation)
     {
         if (Time.time > nextTimeFire)
         {
             nextTimeFire += FireRate;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(bullet.transform.up * bulletForce, ForceMode2D.Impulse);
+            FireBullet(position, rotation);
         }
+    }
+
+    protected void FireBullet(Vector2 position, Quaternion rotation)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, position, rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(bullet.transform.up * bulletForce, ForceMode2D.Impulse);
     }
 }

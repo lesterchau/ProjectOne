@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour
         }
         else if (Input.GetButton("Fire1"))
         {
-            weapon.Fire(firePoint);
+            weapon.Fire(firePoint.position, firePoint.rotation);
         }
     }
 

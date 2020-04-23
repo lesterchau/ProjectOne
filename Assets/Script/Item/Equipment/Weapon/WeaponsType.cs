@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Weapons
+public enum WeaponsType
 {
     Pistol, MachineGun, ShotGun, Sniper
 }

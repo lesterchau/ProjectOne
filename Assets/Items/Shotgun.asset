@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c0bab3a43ea2946998066f5ac66693, type: 3}
-  m_Name: Pistol
+  m_Script: {fileID: 11500000, guid: 437f317232349f64db5315d194a09252, type: 3}
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
-  ItemName: Pistol
+  ItemName: Shotgun
   Description: 
   ItemId: 0
   IconImage: {fileID: 0}
@@ -20,8 +20,10 @@ MonoBehaviour:
   Quantity: -1
   ItemType: 1
   EquapimentType: 0
-  FireRate: 0.1
+  weaponsType: 2
+  FireRate: 0.5
   SpreadAngle: 5
   bulletPrefab: {fileID: 5802811510475576894, guid: 70405d2588b767543b4fa3fecd715374,
     type: 3}
   bulletForce: 20
+  TotalBullets: 10
