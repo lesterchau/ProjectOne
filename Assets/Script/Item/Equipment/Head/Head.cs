@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Weapons", menuName = "Items/Equipments/Cores", order = 3)]
-public class Core : Equipment
+[CreateAssetMenu(fileName = "New Weapons", menuName = "Items/Equipments/Heads", order = 1)]
+public class Head : Equipment
 {
     public int MaximumEnergy;
     public int RegenerateRate;
@@ -11,6 +11,6 @@ public class Core : Equipment
     protected new void OnValidate()
     {
         base.OnValidate();
-        EquapimentType = EquipmentTypes.Cores;
+        EquapimentType = EquipmentTypes.Heads;
     }
 }
