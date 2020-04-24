@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapons", menuName = "Items/Equipments/Cores", order = 3)]
 public class Core : Equipment
 {
-    public int MaximumEnergy;
-    public int RegenerateRate;
+    public float MaximumEnergy;
+    public float RegenerateRate;
 
     protected new void OnValidate()
     {

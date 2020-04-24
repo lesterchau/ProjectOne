@@ -26,4 +26,4 @@ MonoBehaviour:
     type: 3}
   CostPerBullet: 1
   BulletDamage: 2
-  bulletForce: 20
+  bulletForce: 10

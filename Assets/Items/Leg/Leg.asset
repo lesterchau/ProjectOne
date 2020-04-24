@@ -19,6 +19,7 @@ MonoBehaviour:
   IsStackable: 0
   ItemType: 1
   EquapimentType: 5
+  EnergyCost: 0
   EnergyCostPerSecond: 5
   speed: 5
   isHover: 1

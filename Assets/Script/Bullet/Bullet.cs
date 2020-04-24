@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public GameObject hitEffect;
-    public int Damage;
+    public float Damage;
 
     void OnTriggerEnter2D(Collider2D collision)
     {

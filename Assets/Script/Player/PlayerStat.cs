@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
 
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
+    public float maxEnergy;
+    public float currEnergy;
 
     public HealthBar healthBar;
     public Equipment[] equipments = new Equipment[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
@@ -14,8 +16,10 @@ public class PlayerStat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        checkEquipmentSlot();
+        importStatFromEquipment();
+        ResetUI();
+        passWeapon();
     }
 
     // Update is called once per frame
@@ -27,13 +31,20 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
 
     private void OnValidate()
+    {
+        checkEquipmentSlot();
+        importStatFromEquipment();
+        passWeapon();
+    }
+
+    void checkEquipmentSlot()
     {
         int equipmentMaxLength = System.Enum.GetValues(typeof(EquipmentSlot)).Length;
         if (equipments.Length == 0)
@@ -49,11 +60,44 @@ public class PlayerStat : MonoBehaviour
                     newEquipment[i] = equipments[i];
             equipments = newEquipment;
         }
-
-        PassWeapon();
     }
 
-    void PassWeapon()
+    void importStatFromEquipment()
+    {
+        maxEnergy = ((Core)equipments[(int)EquipmentSlot.Core]).MaximumEnergy;
+
+        Body body = (Body)equipments[(int)EquipmentSlot.Body];
+        maxEnergy -= body.EnergyCost;
+        maxHealth = body.HitPoint;
+        currentHealth = maxHealth;
+
+        Leg leg = (Leg)equipments[(int)EquipmentSlot.Leg];
+        passSpeed(leg.speed, leg.EnergyCostPerSecond);
+        maxEnergy -= leg.EnergyCost;
+
+        Head head = (Head)equipments[(int)EquipmentSlot.Head];
+        passViewDistance(head.ViewDistance);
+        maxEnergy -= head.EnergyCost;
+
+        currEnergy = maxEnergy;
+    }
+
+    void ResetUI()
+    {
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
+    void passSpeed(float speed, float costPerSecond)
+    {
+        GetComponent<PlayerMovement>().GetSpeedAndCost(speed, costPerSecond);
+    }
+
+    void passViewDistance(float distance)
+    {
+
+    }
+
+    void passWeapon()
     {
         GetComponent<Shooting>().GetWeapon((Weapon) equipments[(int)EquipmentSlot.Weapon1], (Weapon) equipments[(int)EquipmentSlot.Weapon2]);
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
+    public float moveSpeed;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -38,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+    }
+
+    public void GetSpeedAndCost(float speed, float cost)
+    {
+        moveSpeed = speed;
     }
 
 }

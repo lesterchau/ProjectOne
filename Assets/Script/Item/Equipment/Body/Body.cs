@@ -6,8 +6,8 @@ using UnityEngine;
 public class Body : Equipment
 {
     public int EnergyCost;
-    public int HitPoint;
-    public int Defense;
+    public float HitPoint;
+    public float Defense;
 
     protected new void OnValidate()
     {

@@ -11,7 +11,7 @@ public abstract class Weapon : Equipment
 
     public GameObject bulletPrefab;
     public int CostPerBullet;
-    public int BulletDamage;
+    public float BulletDamage;
     public float bulletForce;
 
     protected float nextTimeFire;
