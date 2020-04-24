@@ -10,7 +10,9 @@ public abstract class Weapon : Equipment
     public float SpreadAngle;
 
     public GameObject bulletPrefab;
-    public float bulletForce = 20f;
+    public int CostPerBullet;
+    public int BulletDamage;
+    public float bulletForce;
 
     protected float nextTimeFire;
 
@@ -43,6 +45,7 @@ public abstract class Weapon : Equipment
     protected void FireBullet(Vector2 position, Quaternion rotation)
     {
         GameObject bullet = Instantiate(bulletPrefab, position, rotation);
+        bullet.GetComponent<Bullet>().Damage = BulletDamage;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(bullet.transform.up * bulletForce, ForceMode2D.Impulse);
     }

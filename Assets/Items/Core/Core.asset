@@ -16,9 +16,8 @@ MonoBehaviour:
   Description: 
   ItemId: 0
   IconImage: {fileID: 0}
-  HasQuantity: 0
-  Quantity: -1
+  IsStackable: 0
   ItemType: 1
   EquapimentType: 2
-  MaximumEnergy: 0
-  RegenerateRate: 0
+  MaximumEnergy: 100
+  RegenerateRate: 10

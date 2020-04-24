@@ -19,5 +19,5 @@ MonoBehaviour:
   IsStackable: 0
   ItemType: 1
   EquapimentType: 3
-  EnergyCost: 5
-  ViewDistance: 10
+  EnergyCost: 10
+  ViewDistance: 5

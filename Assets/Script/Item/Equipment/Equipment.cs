@@ -8,8 +8,8 @@ public abstract class Equipment : Item
 
     protected void OnValidate()
     {
-        HasQuantity = false;
-        Quantity = -1;
+        base.OnValidate();
+        IsStackable = false;
         ItemType = ItemTypes.Equapiments;
     }
 

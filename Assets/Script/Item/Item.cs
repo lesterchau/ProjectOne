@@ -8,8 +8,12 @@ public abstract class Item : ScriptableObject
     public string Description;
     public int ItemId;
     public Sprite IconImage;
-    public bool HasQuantity;
-    [DrawIf("HasQuantity", true, ComparisonType.Equals)]
-    public int Quantity;
+    public bool IsStackable;
     public ItemTypes ItemType;
+
+    protected void OnValidate()
+    {
+        string assetPath = UnityEditor.AssetDatabase.GetAssetPath(this.GetInstanceID());
+        ItemName = System.IO.Path.GetFileNameWithoutExtension(assetPath);
+    }
 }

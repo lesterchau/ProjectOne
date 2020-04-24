@@ -19,6 +19,6 @@ MonoBehaviour:
   IsStackable: 0
   ItemType: 1
   EquapimentType: 5
-  EnergyCostPerSecond: 10
+  EnergyCostPerSecond: 5
   speed: 5
   isHover: 1

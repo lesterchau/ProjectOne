@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapons", menuName = "Items/Equipments/Legs", order = 4)]
 public class Leg : Equipment
 {
+    public int EnergyCostPerSecond;
     public int speed;
     public bool isHover;
 

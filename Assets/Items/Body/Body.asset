@@ -16,8 +16,7 @@ MonoBehaviour:
   Description: 
   ItemId: 0
   IconImage: {fileID: 0}
-  HasQuantity: 0
-  Quantity: -1
+  IsStackable: 0
   ItemType: 1
   EquapimentType: 1
   EnergyCost: 5
