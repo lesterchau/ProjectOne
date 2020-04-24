@@ -1173,7 +1173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 54723517}
   bulletForce: 20
-  weapon: {fileID: 11400000, guid: 21164319f0f7e3c44b1fbe4eb57cd47e, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 21164319f0f7e3c44b1fbe4eb57cd47e, type: 2}
+  - {fileID: 11400000, guid: d44b928a36800e348b78a882f872e7ee, type: 2}
 --- !u!114 &757174888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1191,13 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1313473512}
+  equipments:
+  - {fileID: 11400000, guid: accd9f651f9c6d3428d9374a5f0d767a, type: 2}
+  - {fileID: 11400000, guid: c42d626d32516874199f1614dee2efcd, type: 2}
+  - {fileID: 11400000, guid: e50911d0c081c7b478131f242786dbc5, type: 2}
+  - {fileID: 11400000, guid: 6d11c51c53bff8d41b596e482a9bfdf8, type: 2}
+  - {fileID: 11400000, guid: 21164319f0f7e3c44b1fbe4eb57cd47e, type: 2}
+  - {fileID: 11400000, guid: d44b928a36800e348b78a882f872e7ee, type: 2}
 --- !u!70 &757174889
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
