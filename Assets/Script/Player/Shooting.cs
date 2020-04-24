@@ -7,8 +7,6 @@ public class Shooting : MonoBehaviour
 
     public Transform firePoint;
 
-    public float bulletForce = 20f;
-
     public Weapon[] weapons = new Weapon[2];
 
     // Update is called once per frame
