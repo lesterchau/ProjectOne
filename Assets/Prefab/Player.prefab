@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  costPerSecond: 1
   rb: {fileID: 8533130552542958508}
   animator: {fileID: 8533130552542958505}
   cam: {fileID: 0}
@@ -155,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 0}
-  bulletForce: 20
   weapons:
   - {fileID: 11400000, guid: 21164319f0f7e3c44b1fbe4eb57cd47e, type: 2}
   - {fileID: 11400000, guid: d44b928a36800e348b78a882f872e7ee, type: 2}
@@ -172,8 +172,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
+  maxEnergy: 85
+  currEnergy: 85
+  rechargeRate: 10
+  degenerate: 0
   healthBar: {fileID: 0}
+  tempText: {fileID: 0}
   equipments:
   - {fileID: 11400000, guid: accd9f651f9c6d3428d9374a5f0d767a, type: 2}
   - {fileID: 11400000, guid: c42d626d32516874199f1614dee2efcd, type: 2}
@@ -194,6 +199,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.052070856}
-  m_Size: {x: 0.83337414, y: 1.5001225}
+  m_Offset: {x: -0.005289316, y: -0.21100807}
+  m_Size: {x: 0.71876574, y: 0.90210915}
   m_Direction: 0
