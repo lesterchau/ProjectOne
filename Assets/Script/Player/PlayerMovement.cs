@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed;
+    public float costPerSecond;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -20,13 +21,17 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        PlayerStat stat = GetComponent<PlayerStat>();
 
         animator.SetFloat("Speed", movement.sqrMagnitude);
         if (movement.sqrMagnitude != 0)
         {
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
+            stat.degenerate = costPerSecond;
         }
+        else
+            stat.degenerate = 0;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = (mousePos - rb.position);
@@ -43,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public void GetSpeedAndCost(float speed, float cost)
     {
         moveSpeed = speed;
+        costPerSecond = cost;
     }
 
 }

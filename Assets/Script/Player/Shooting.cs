@@ -15,13 +15,15 @@ public class Shooting : MonoBehaviour
         if (PauseMenu.GameIsPaused)
             return;
 
+        PlayerStat stat = GetComponent<PlayerStat>();
+
         if (Input.GetButtonDown("Fire1"))
         {
             weapons[0].resetTime();
         }
         else if (Input.GetButton("Fire1"))
         {
-            weapons[0].Fire(firePoint.position, firePoint.rotation);
+            weapons[0].Fire(firePoint.position, firePoint.rotation, stat);
         }
 
         if (Input.GetButtonDown("Fire2"))
@@ -30,7 +32,7 @@ public class Shooting : MonoBehaviour
         }
         else if (Input.GetButton("Fire2"))
         {
-            weapons[1].Fire(firePoint.position, firePoint.rotation);
+            weapons[1].Fire(firePoint.position, firePoint.rotation, stat);
         }
     }
 

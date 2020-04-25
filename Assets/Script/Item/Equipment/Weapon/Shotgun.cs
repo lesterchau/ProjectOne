@@ -8,7 +8,7 @@ public class Shotgun : Weapon
 
     public int TotalBullets;
 
-    public override void Fire(Vector2 position, Quaternion rotation)
+    public override void Fire(Vector2 position, Quaternion rotation, PlayerStat player)
     {
         if (Time.time > nextTimeFire)
         {
@@ -18,6 +18,7 @@ public class Shotgun : Weapon
             {
                 FireBullet(position, rotate);
             }
+            player.currEnergy -= CostPerBullet;
         }
     }
 

@@ -21,9 +21,9 @@ MonoBehaviour:
   EquapimentType: 0
   weaponsType: 1
   FireRate: 0.15
-  SpreadAngle: 10
+  SpreadAngle: 20
   bulletPrefab: {fileID: 5802811510475576894, guid: 70405d2588b767543b4fa3fecd715374,
     type: 3}
-  CostPerBullet: 1
+  CostPerBullet: 0.33333334
   BulletDamage: 2
   bulletForce: 10

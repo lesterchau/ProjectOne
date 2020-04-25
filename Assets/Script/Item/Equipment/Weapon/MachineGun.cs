@@ -6,10 +6,10 @@ using UnityEngine;
 public class MachineGun : Weapon
 {
 
-    public override void Fire(Vector2 position, Quaternion rotation)
+    public override void Fire(Vector2 position, Quaternion rotation, PlayerStat player)
     {
         rotation *= Quaternion.Euler(Vector3.forward * Random.Range(-SpreadAngle, SpreadAngle));
-        base.Fire(position, rotation);
+        base.Fire(position, rotation, player);
     }
 
     protected new void OnValidate()

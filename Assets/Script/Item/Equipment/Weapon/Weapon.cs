@@ -10,7 +10,7 @@ public abstract class Weapon : Equipment
     public float SpreadAngle;
 
     public GameObject bulletPrefab;
-    public int CostPerBullet;
+    public float CostPerBullet;
     public float BulletDamage;
     public float bulletForce;
 
@@ -33,12 +33,13 @@ public abstract class Weapon : Equipment
         EquapimentType = EquipmentTypes.Weapons;
     }
 
-    public virtual void Fire(Vector2 position, Quaternion rotation)
+    public virtual void Fire(Vector2 position, Quaternion rotation, PlayerStat player)
     {
         if (Time.time > nextTimeFire)
         {
             nextTimeFire += FireRate;
             FireBullet(position, rotation);
+            player.currEnergy -= CostPerBullet;
         }
     }
 

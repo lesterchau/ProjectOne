@@ -20,6 +20,6 @@ MonoBehaviour:
   ItemType: 1
   EquapimentType: 5
   EnergyCost: 0
-  EnergyCostPerSecond: 5
+  EnergyCostPerSecond: 2
   speed: 5
   isHover: 1

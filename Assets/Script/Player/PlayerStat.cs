@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
@@ -9,9 +11,14 @@ public class PlayerStat : MonoBehaviour
     public float currentHealth;
     public float maxEnergy;
     public float currEnergy;
+    public float rechargeRate;
+    public float degenerate;
 
     public HealthBar healthBar;
+    public TextMeshProUGUI tempText;
     public Equipment[] equipments = new Equipment[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
+
+    private float finalRegenerate;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +27,7 @@ public class PlayerStat : MonoBehaviour
         importStatFromEquipment();
         ResetUI();
         passWeapon();
+        renewUI();
     }
 
     // Update is called once per frame
@@ -29,6 +37,18 @@ public class PlayerStat : MonoBehaviour
         {
             TakeDamage(20);
         }
+
+    }
+
+    private void LateUpdate()
+    {
+        finalRegenerate = rechargeRate * currentHealth / maxHealth - degenerate;
+        float generatedEnergyOnThisFrame = finalRegenerate * Time.deltaTime;
+        if (maxEnergy - currEnergy > generatedEnergyOnThisFrame)
+            currEnergy += generatedEnergyOnThisFrame;
+        else
+            currEnergy = maxEnergy;
+        renewUI();
     }
 
     void TakeDamage(float damage)
@@ -64,7 +84,9 @@ public class PlayerStat : MonoBehaviour
 
     void importStatFromEquipment()
     {
-        maxEnergy = ((Core)equipments[(int)EquipmentSlot.Core]).MaximumEnergy;
+        Core core = (Core)equipments[(int)EquipmentSlot.Core];
+        maxEnergy = core.MaximumEnergy;
+        rechargeRate = core.RegenerateRate;
 
         Body body = (Body)equipments[(int)EquipmentSlot.Body];
         maxEnergy -= body.EnergyCost;
@@ -100,5 +122,25 @@ public class PlayerStat : MonoBehaviour
     void passWeapon()
     {
         GetComponent<Shooting>().GetWeapon((Weapon) equipments[(int)EquipmentSlot.Weapon1], (Weapon) equipments[(int)EquipmentSlot.Weapon2]);
+    }
+
+    void renewUI()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.Append("HP: ");
+        builder.Append(currentHealth);
+        builder.Append("/");
+        builder.Append(maxHealth);
+
+        builder.Append("\nEnergy: ");
+        builder.Append(System.Math.Ceiling(currEnergy * 10) / 10);
+        builder.Append("/");
+        builder.Append(maxEnergy);
+
+        builder.Append("\nRechage Rate: ");
+        builder.Append(finalRegenerate);
+        builder.Append("/");
+        builder.Append(rechargeRate);
+        tempText.text = builder.ToString();
     }
 }
