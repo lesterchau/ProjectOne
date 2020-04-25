@@ -24,7 +24,7 @@ MonoBehaviour:
   SpreadAngle: 20
   bulletPrefab: {fileID: 5802811510475576894, guid: 70405d2588b767543b4fa3fecd715374,
     type: 3}
-  CostPerBullet: 1
+  CostPerBullet: 1.5
   BulletDamage: 4
   bulletForce: 10
   TotalBullets: 5

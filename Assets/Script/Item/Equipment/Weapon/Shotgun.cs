@@ -13,7 +13,7 @@ public class Shotgun : Weapon
         if (Time.time > nextTimeFire)
         {
             nextTimeFire += FireRate;
-            Quaternion[] rotations = calculateRotation(rotation);
+            Quaternion[] rotations = CalculateRotation(rotation);
             foreach (Quaternion rotate in rotations)
             {
                 FireBullet(position, rotate);
@@ -22,7 +22,7 @@ public class Shotgun : Weapon
         }
     }
 
-    private Quaternion[] calculateRotation(Quaternion rotation)
+    private Quaternion[] CalculateRotation(Quaternion rotation)
     {
         Quaternion[] result = new Quaternion[TotalBullets];
         int half = TotalBullets / 2;
