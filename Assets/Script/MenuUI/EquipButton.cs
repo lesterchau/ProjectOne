@@ -10,6 +10,6 @@ public class EquipButton : MonoBehaviour
 
     public void Equip()
     {
-        Menu.SelectedEquipment[(int)Slot] = Num;
+        Menu.Equip(Num, Slot);
     }
 }

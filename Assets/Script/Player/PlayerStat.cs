@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
-
     public float maxHealth;
     public float currentHealth;
     public float maxEnergy;
@@ -23,6 +22,7 @@ public class PlayerStat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetEquipment();
         CheckEquipmentSlot();
         ImportStatFromEquipment();
         ResetUI();
@@ -117,6 +117,12 @@ public class PlayerStat : MonoBehaviour
     void PassViewDistance(float distance)
     {
 
+    }
+
+    void GetEquipment()
+    {
+        if (PlayerData.isEquip)
+            equipments = PlayerData.Equipments;
     }
 
     void PassWeapon()

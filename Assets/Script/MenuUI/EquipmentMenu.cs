@@ -20,6 +20,12 @@ public class EquipmentMenu : MonoBehaviour
             Items.Add(_item);
     }
 
+    public void Equip(int num, EquipmentSlot slot)
+    {
+        SelectedEquipment[(int)slot] = num;
+        PlayerData.Equipments[(int)slot] = (Equipment)Items[num].item;
+    }
+
     private int SearchTarget(Item target)
     {
         for (int i = 0; i < Items.Count; i++)
@@ -34,6 +40,11 @@ public class EquipmentMenu : MonoBehaviour
     {
         if (SelectedEquipment.Length != System.Enum.GetValues(typeof(EquipmentSlot)).Length)
             SelectedEquipment = new int[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
+        for (int i = 0; i < System.Enum.GetValues(typeof(EquipmentSlot)).Length; i++)
+        {
+            PlayerData.Equipments[i] = (Equipment)Items[SelectedEquipment[i]].item;
+        }
+        PlayerData.isEquip = true;
     }
 
     void OnValidate()
