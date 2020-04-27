@@ -5,7 +5,7 @@ using UnityEngine;
 public class EquipmentMenu : MonoBehaviour
 {
     public List<ItemData> Items = new List<ItemData>();
-
+    public int[] SelectedEquipment = new int[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
     public void AddItem(ItemData _item)
     {
         if (_item.item.IsStackable)
@@ -28,6 +28,18 @@ public class EquipmentMenu : MonoBehaviour
                 return i;
         }
         return -1;
+    }
+
+    void OnEnable()
+    {
+        if (SelectedEquipment.Length != System.Enum.GetValues(typeof(EquipmentSlot)).Length)
+            SelectedEquipment = new int[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
+    }
+
+    void OnValidate()
+    {
+        if (SelectedEquipment.Length != System.Enum.GetValues(typeof(EquipmentSlot)).Length)
+            SelectedEquipment = new int[System.Enum.GetValues(typeof(EquipmentSlot)).Length];
     }
 
 }
