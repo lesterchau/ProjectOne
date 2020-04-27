@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Core
   m_EditorClassIdentifier: 
   ItemName: Core
-  Description: 
+  Description: This is a Core
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300004, guid: 1001845fb0a7fc742b9bb8597c74b830, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 2

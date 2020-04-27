@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Leg
   m_EditorClassIdentifier: 
   ItemName: Leg
-  Description: 
+  Description: This is a Leg
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300012, guid: 1001845fb0a7fc742b9bb8597c74b830, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 5

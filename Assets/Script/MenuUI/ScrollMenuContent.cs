@@ -50,7 +50,10 @@ public class ScrollMenuContent : MonoBehaviour
                     select.image = image;
                     select.text = text;
                     if (!selected)
+                    {
                         select.PassNum();
+                        selected = true;
+                    }
                 }
         }
     }

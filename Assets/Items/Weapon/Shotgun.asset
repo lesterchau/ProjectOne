@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   ItemName: Shotgun
-  Description: 
+  Description: This is a Shotgun
   ItemId: 0
   IconImage: {fileID: 0}
   IsStackable: 0

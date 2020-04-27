@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Head
   m_EditorClassIdentifier: 
   ItemName: Head
-  Description: 
+  Description: This is a Head
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300000, guid: 1001845fb0a7fc742b9bb8597c74b830, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 3

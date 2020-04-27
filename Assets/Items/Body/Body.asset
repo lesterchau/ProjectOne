@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Body
   m_EditorClassIdentifier: 
   ItemName: Body
-  Description: 
+  Description: This is a Body
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300008, guid: 1001845fb0a7fc742b9bb8597c74b830, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 1
