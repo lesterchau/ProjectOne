@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            weapons[0].resetTime();
+            weapons[0].ResetTime();
         }
         else if (Input.GetButton("Fire1"))
         {
@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            weapons[1].resetTime();
+            weapons[1].ResetTime();
         }
         else if (Input.GetButton("Fire2"))
         {

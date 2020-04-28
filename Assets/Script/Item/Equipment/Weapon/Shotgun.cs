@@ -53,10 +53,11 @@ public class Shotgun : Weapon
         return result;
     }
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         weaponsType = WeaponsType.ShotGun;
+        Description += "\nTotal Bullet: " + TotalBullets;
     }
 
 }

@@ -6,7 +6,7 @@ public abstract class Equipment : Item
 {
     public EquipmentTypes EquapimentType;
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         IsStackable = false;

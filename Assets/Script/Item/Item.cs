@@ -11,9 +11,10 @@ public abstract class Item : ScriptableObject
     public bool IsStackable;
     public ItemTypes ItemType;
 
-    protected void OnValidate()
+    protected virtual void OnValidate()
     {
         string assetPath = UnityEditor.AssetDatabase.GetAssetPath(this.GetInstanceID());
         ItemName = System.IO.Path.GetFileNameWithoutExtension(assetPath);
+        Description = "This is a " + ItemName;
     }
 }

@@ -9,9 +9,12 @@ public class Body : Equipment
     public float HitPoint;
     public float Defense;
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         EquapimentType = EquipmentTypes.Bodys;
+        Description += "\nCost: " + EnergyCost +
+                       "\nHealth: " + HitPoint +
+                       "\nDefense: " + Defense;
     }
 }

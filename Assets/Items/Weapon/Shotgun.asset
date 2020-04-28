@@ -13,9 +13,19 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   ItemName: Shotgun
-  Description: This is a Shotgun
+  Description: 'This is a Shotgun
+
+    Cost: 1.5
+
+    Damage: 4
+
+    Fire Rate: 0.5
+
+    Bullet Speed: 10
+
+    Total Bullet: 5'
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300000, guid: e3d6a4139776ef54ca296e6df8ee3d89, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 0

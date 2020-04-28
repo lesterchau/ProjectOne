@@ -13,9 +13,17 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: 
   ItemName: MachineGun
-  Description: This is a Machine Gun
+  Description: 'This is a MachineGun
+
+    Cost: 0.5
+
+    Damage: 2
+
+    Fire Rate: 0.15
+
+    Bullet Speed: 10'
   ItemId: 0
-  IconImage: {fileID: 0}
+  IconImage: {fileID: 21300002, guid: e3d6a4139776ef54ca296e6df8ee3d89, type: 3}
   IsStackable: 0
   ItemType: 1
   EquapimentType: 0

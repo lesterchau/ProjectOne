@@ -8,9 +8,11 @@ public class Head : Equipment
     public int EnergyCost;
     public float ViewDistance;
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         EquapimentType = EquipmentTypes.Heads;
+        Description += "\nCost: " + EnergyCost +
+                       "\nView Distance: " + ViewDistance;
     }
 }

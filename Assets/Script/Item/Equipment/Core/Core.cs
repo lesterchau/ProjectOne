@@ -12,5 +12,7 @@ public class Core : Equipment
     {
         base.OnValidate();
         EquapimentType = EquipmentTypes.Cores;
+        Description += "\nMaximum Energy: " + MaximumEnergy +
+                       "\nRegenerate Rate: " + RegenerateRate;
     }
 }

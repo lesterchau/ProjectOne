@@ -10,9 +10,12 @@ public class Leg : Equipment
     public float speed;
     public bool isHover;
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         EquapimentType = EquipmentTypes.Legs;
+        Description += "\nCost: " + EnergyCost +
+                       "\nSpeed: " + speed +
+                       "\nMoving Cost: " + EnergyCostPerSecond;
     }
 }

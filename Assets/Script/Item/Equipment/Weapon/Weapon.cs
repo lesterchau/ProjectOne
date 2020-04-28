@@ -21,16 +21,20 @@ public abstract class Weapon : Equipment
         nextTimeFire = Time.time;
     }
 
-    public void resetTime()
+    public void ResetTime()
     {
         if (Time.time > nextTimeFire)
             nextTimeFire = Time.time;
     }
 
-    protected new void OnValidate()
+    protected override void OnValidate()
     {
         base.OnValidate();
         EquapimentType = EquipmentTypes.Weapons;
+        Description += "\nCost: " + CostPerBullet +
+                       "\nDamage: " + BulletDamage +
+                       "\nFire Rate: " + FireRate +
+                       "\nBullet Speed: " + bulletForce;
     }
 
     public virtual void Fire(Vector2 position, Quaternion rotation, PlayerStat player)
