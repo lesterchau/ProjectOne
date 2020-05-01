@@ -44,7 +44,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: a735412482663cc4d885170ab16bed9e, type: 3}
     - {fileID: 2800000, guid: 2573324ede6ac8347b8199c91a57d7d5, type: 3}
     - {fileID: 2800000, guid: 065a121f829136a43bda8d7971627336, type: 3}
-    totalSpriteSurfaceArea: 18432
+    totalSpriteSurfaceArea: 24827
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -119,6 +119,19 @@ SpriteAtlas:
   - {fileID: 21300040, guid: 2573324ede6ac8347b8199c91a57d7d5, type: 3}
   - {fileID: 21300038, guid: 2573324ede6ac8347b8199c91a57d7d5, type: 3}
   - {fileID: 21300036, guid: 2573324ede6ac8347b8199c91a57d7d5, type: 3}
+  - {fileID: 21300022, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300016, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300020, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300018, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300024, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300004, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300006, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300000, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300002, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300012, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300014, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300008, guid: 065a121f829136a43bda8d7971627336, type: 3}
+  - {fileID: 21300010, guid: 065a121f829136a43bda8d7971627336, type: 3}
   m_PackedSpriteNamesToIndex:
   - Toxin Landscapes_0
   - Toxin Landscapes_1
@@ -191,5 +204,18 @@ SpriteAtlas:
   - day 2_20
   - day 2_19
   - day 2_18
+  - Props_11
+  - Props_8
+  - Props_10
+  - Props_9
+  - Props_12
+  - Props_2
+  - Props_3
+  - Props_0
+  - Props_1
+  - Props_6
+  - Props_7
+  - Props_4
+  - Props_5
   m_Tag: TileSpriteAtlas
   m_IsVariant: 0
